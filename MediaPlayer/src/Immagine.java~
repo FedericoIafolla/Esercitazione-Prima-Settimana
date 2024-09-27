@@ -1,0 +1,29 @@
+public class Immagine extends ElementoMultimediale {
+    private int luminosità;
+
+    public Immagine(String titolo, int luminosità) {
+        super(titolo);
+        this.luminosità = luminosità;
+    }
+
+    public void aumentaLuminosita(int variazione) {
+        luminosità = Math.min(100, luminosità + variazione);
+        System.out.println("Luminosità attuale: " + luminosità);
+    }
+
+    public void diminuisciLuminosita(int variazione) {
+        luminosità = Math.max(0, luminosità - variazione);
+        System.out.println("Luminosità attuale: " + luminosità);
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Visualizzo immagine: " + titolo);
+        show();
+    }
+
+    @Override
+    public void show() {
+        System.out.println(titolo + " " + "*".repeat(luminosità));
+    }
+}
