@@ -16,41 +16,39 @@ public class LettoreMultimediale {
                     System.out.print("Hai raggiunto il numero massimo di elementi. Vuoi aggiungerne un altro? (y/n): ");
                     risposta = scanner.nextLine();
                     if (risposta.equalsIgnoreCase("n")) {
-                        continua = false;  // Stop adding elements
-                        break; // Exit the loop for adding elements
+                        continua = false;
+                        break;
                     } else if (!risposta.equalsIgnoreCase("y")) {
                         System.out.println("Errore di input. Riprova.");
                     }
                 } while (!risposta.equalsIgnoreCase("y") && !risposta.equalsIgnoreCase("n"));
             }
 
-            if (continua) { // Only proceed to add element if continua is still true
-                System.out.print("Inserisci il " + (conteggioElementi + 1) + "° titolo: ");
-                String titolo = scanner.nextLine();
-                System.out.print("Selezionare la tipologia (1: Immagine, 2: Audio, 3: Video): ");
-                int tipo = scanner.nextInt();
-                if (tipo == 1) {
-                    System.out.print("Inserisci luminosità (0-100): ");
-                    int luminosità = scanner.nextInt();
-                    elementi[conteggioElementi] = new Immagine(titolo, luminosità);
-                } else if (tipo == 2) {
-                    System.out.print("Inserisci durata (in secondi): ");
-                    int durata = scanner.nextInt();
-                    System.out.print("Inserisci volume (0-100): ");
-                    int volume = scanner.nextInt();
-                    elementi[conteggioElementi] = new Audio(titolo, durata, volume);
-                } else if (tipo == 3) {
-                    System.out.print("Inserisci durata (in secondi): ");
-                    int durata = scanner.nextInt();
-                    System.out.print("Inserisci volume (0-100): ");
-                    int volume = scanner.nextInt();
-                    System.out.print("Inserisci luminosità (0-100): ");
-                    int luminosità = scanner.nextInt();
-                    elementi[conteggioElementi] = new Video(titolo, durata, volume, luminosità);
-                }
-                conteggioElementi++;
-                scanner.nextLine();  // Consuma la nuova riga
+            System.out.print("Inserisci il " + (conteggioElementi + 1) + "° titolo: ");
+            String titolo = scanner.nextLine();
+            System.out.print("Selezionare la tipologia (1: Immagine, 2: Audio, 3: Video): ");
+            int tipo = scanner.nextInt();
+            if (tipo == 1) {
+                System.out.print("Inserisci luminosità (0-100): ");
+                int luminosità = scanner.nextInt();
+                elementi[conteggioElementi] = new Immagine(titolo, luminosità);
+            } else if (tipo == 2) {
+                System.out.print("Inserisci durata (in secondi): ");
+                int durata = scanner.nextInt();
+                System.out.print("Inserisci volume (0-100): ");
+                int volume = scanner.nextInt();
+                elementi[conteggioElementi] = new Audio(titolo, durata, volume);
+            } else if (tipo == 3) {
+                System.out.print("Inserisci durata (in secondi): ");
+                int durata = scanner.nextInt();
+                System.out.print("Inserisci volume (0-100): ");
+                int volume = scanner.nextInt();
+                System.out.print("Inserisci luminosità (0-100): ");
+                int luminosità = scanner.nextInt();
+                elementi[conteggioElementi] = new Video(titolo, durata, volume, luminosità);
             }
+            conteggioElementi++;
+            scanner.nextLine();  // Consuma la nuova riga
         }
     }
 
@@ -176,15 +174,22 @@ public class LettoreMultimediale {
                 if (elemento instanceof Immagine || elemento instanceof Video) {
                     System.out.println("Luminosità attuale: " + ((Immagine) elemento).getLuminosità());
                     System.out.print("Inserisci di quanto aumentare o diminuire la luminosità (numero negativo per diminuire): ");
-                    int variazioneLuminosità = scanner.nextInt();
-                    int nuovaLuminosità = ((Immagine) elemento).getLuminosità() + variazioneLuminosità;
+                    int variazioneLuminosita = scanner.nextInt();
+                    int nuovaLuminosità = ((Immagine) elemento).getLuminosità() + variazioneLuminosita;
                     ((Immagine) elemento).setLuminosità(Math.max(nuovaLuminosità, 0)); // Imposta a 0 se negativo
                     System.out.println("Luminosità aggiornata a: " + ((Immagine) elemento).getLuminosità());
                 }
+            } else if (sceltaModifica == 3 && elemento instanceof Video) {
+                System.out.println("Luminosità attuale: " + ((Video) elemento).getLuminosità());
+                System.out.print("Inserisci di quanto aumentare o diminuire la luminosità (numero negativo per diminuire): ");
+                int variazioneLuminosita = scanner.nextInt();
+                int nuovaLuminosità = ((Video) elemento).getLuminosità() + variazioneLuminosita;
+                ((Video) elemento).setLuminosità(Math.max(nuovaLuminosità, 0)); // Imposta a 0 se negativo
+                System.out.println("Luminosità aggiornata a: " + ((Video) elemento).getLuminosità());
             } else if (sceltaModifica == 0) {
-                modificheAttive = false; // Torna al menu precedente
+                modificheAttive = false; // Torna al menu principale
             } else {
-                System.out.println("Scelta non valida.");
+                System.out.println("Opzione non valida.");
             }
         }
     }

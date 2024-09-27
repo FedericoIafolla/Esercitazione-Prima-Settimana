@@ -1,0 +1,12 @@
+welcome.message=Bienvenue dans le Lecteur Multimédia
+select.option=Sélectionnez une option
+menu.play=Lire l'Élément
+menu.edit=Modifier l'Élément
+menu.exit=Sortir
+input.invalid=Entrée invalide. Veuillez réessayer.
+element.playing=En train de jouer: {0}
+element.updated=Élément mis à jour: {0}
+element.current.brightness=Luminosité actuelle: {0}
+element.current.volume=Volume actuel: {0}
+element.current.title=Titre actuel: {0}
+confirm.exit=Êtes-vous sûr de vouloir quitter ? (y/n)

@@ -10,14 +10,9 @@ public class Immagine extends ElementoMultimediale {
         return luminosità;
     }
 
-    public void aumentaLuminosita(int variazione) {
-        luminosità = Math.min(100, luminosità + variazione);
-        System.out.println("Luminosità attuale: " + luminosità);
-    }
-
-    public void diminuisciLuminosita(int variazione) {
-        luminosità = Math.max(0, luminosità - variazione);
-        System.out.println("Luminosità attuale: " + luminosità);
+    public void setLuminosità(int luminosità) {
+        this.luminosità = Math.max(0, Math.min(100, luminosità)); // Ensure luminosità stays between 0 and 100
+        System.out.println("Luminosità attuale: " + this.luminosità);
     }
 
     @Override

@@ -12,10 +12,6 @@ Il progetto **Lettore Multimediale** è un'applicazione Java progettata per gest
 - **Menu Interattivo**: Navigazione semplice tramite un menu testuale interattivo.
 - **Validazione Input**: L'applicazione gestisce input non validi, richiedendo all'utente di riprovare.
 - **Feedback Dinamico**: Le modifiche sono visualizzate immediatamente.
-- **Benvenuto Personalizzato**: All'avvio, viene mostrato un messaggio di benvenuto.
-- **Gestione dell'Aggiunta di Elementi**: Gli utenti possono continuare ad aggiungere elementi fino a un massimo di cinque, con la possibilità di decidere di smettere di aggiungere quando raggiungono questo limite.
-- **Modifiche Multiple**: Gli utenti possono modificare il titolo, la luminosità e il volume degli elementi multimediali in modo interattivo.
-- **Conferma Uscita**: Durante l'uscita, il programma richiede conferma all'utente.
 
 ## Funzionalità
 
@@ -26,18 +22,13 @@ L'interfaccia principale offre le seguenti opzioni:
 3. **Esci**: Uscita dall'applicazione con conferma.
 
 ### Sezione di Riproduzione
-Dopo aver selezionato "Riproduci Elemento", l'utente può scegliere un elemento dall'elenco e riprodurlo. L'applicazione visualizza l'elemento attualmente in riproduzione con dettagli come il titolo e i valori attuali di volume e luminosità.
+Dopo aver selezionato "Riproduci Elemento", l'utente può scegliere un elemento dall'elenco e riprodurlo.
 
 ### Sezione di Modifica
 La sezione "Modifica Elemento" permette di aggiornare:
 - **Immagini**: Titolo e luminosità.
 - **Audio**: Titolo e volume.
 - **Video**: Titolo, volume e luminosità.
-
-Le modifiche vengono applicate immediatamente e l'utente può visualizzare i valori attuali prima di apportare cambiamenti.
-
-### Gestione dell'Aggiunta di Elementi
-Gli utenti possono continuare ad aggiungere nuovi elementi fino a un massimo di cinque. Se raggiungono questo limite, viene offerta la possibilità di smettere di aggiungere nuovi elementi.
 
 ### Gestione dell'Uscita
 Quando si seleziona l'opzione di uscita, il programma richiede una conferma ("y" per confermare, "n" per annullare).

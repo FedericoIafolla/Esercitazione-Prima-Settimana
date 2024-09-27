@@ -12,14 +12,9 @@ public class Audio extends ElementoMultimediale {
         return volume;
     }
 
-    public void abbassaVolume(int variazione) {
-        volume = Math.max(0, volume - variazione);
-        System.out.println("Volume attuale: " + volume);
-    }
-
-    public void alzaVolume(int variazione) {
-        volume = Math.min(100, volume + variazione);
-        System.out.println("Volume attuale: " + volume);
+    public void setVolume(int volume) {
+        this.volume = Math.max(0, Math.min(100, volume)); // Ensure volume stays between 0 and 100
+        System.out.println("Volume attuale: " + this.volume);
     }
 
     @Override
