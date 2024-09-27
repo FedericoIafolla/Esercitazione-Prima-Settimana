@@ -4,7 +4,7 @@
 Il progetto **Lettore Multimediale** è un'applicazione Java progettata per gestire e riprodurre diversi tipi di contenuti multimediali, inclusi immagini, audio e video. L'implementazione della Programmazione Orientata agli Oggetti (OOP) rende il progetto modulare e facilmente estendibile, offrendo un'interfaccia interattiva per gli utenti.
 
 ## Caratteristiche Principali
-- **Gestione dei Contenuti Multimediali**: Gli utenti possono aggiungere, riprodurre e modificare vari elementi multimediali.
+- **Gestione dei Contenuti Multimediali**: Gli utenti possono aggiungere, riprodurre, modificare ed eliminare vari elementi multimediali.
 - **Tipi di Contenuti**:
     - **Immagini**: Modifica del titolo e della luminosità.
     - **Audio**: Modifica del titolo e del volume.
@@ -15,6 +15,8 @@ Il progetto **Lettore Multimediale** è un'applicazione Java progettata per gest
 - **Benvenuto Personalizzato**: All'avvio, viene mostrato un messaggio di benvenuto.
 - **Gestione dell'Aggiunta di Elementi**: Gli utenti possono continuare ad aggiungere elementi fino a un massimo di cinque, con la possibilità di decidere di smettere di aggiungere quando raggiungono questo limite.
 - **Modifiche Multiple**: Gli utenti possono modificare il titolo, la luminosità e il volume degli elementi multimediali in modo interattivo.
+- **Elenco degli Elementi**: Gli utenti possono visualizzare un elenco di tutti gli elementi creati, suddivisi per tipo, con i dettagli di ciascun elemento.
+- **Eliminazione degli Elementi**: Gli utenti possono eliminare uno degli elementi creati in qualsiasi momento.
 - **Conferma Uscita**: Durante l'uscita, il programma richiede conferma all'utente.
 
 ## Funzionalità
@@ -23,7 +25,10 @@ Il progetto **Lettore Multimediale** è un'applicazione Java progettata per gest
 L'interfaccia principale offre le seguenti opzioni:
 1. **Riproduci Elemento**: Visualizza un elenco degli elementi multimediali e consente di riprodurne uno.
 2. **Modifica Elemento**: Permette di modificare titolo, volume o luminosità degli elementi multimediali.
-3. **Esci**: Uscita dall'applicazione con conferma.
+3. **Aggiungi Elemento Extra**: Dopo aver creato cinque elementi, è possibile aggiungerne altri.
+4. **Lista Elementi**: Mostra un elenco di tutti gli elementi creati, suddivisi per tipo, con i dettagli di ciascun elemento.
+5. **Elimina Elemento**: Consente di eliminare un elemento dall'elenco.
+6. **Esci**: Uscita dall'applicazione con conferma.
 
 ### Sezione di Riproduzione
 Dopo aver selezionato "Riproduci Elemento", l'utente può scegliere un elemento dall'elenco e riprodurlo. L'applicazione visualizza l'elemento attualmente in riproduzione con dettagli come il titolo e i valori attuali di volume e luminosità.
@@ -36,6 +41,9 @@ La sezione "Modifica Elemento" permette di aggiornare:
 
 Le modifiche vengono applicate immediatamente e l'utente può visualizzare i valori attuali prima di apportare cambiamenti.
 
+### Sezione di Eliminazione
+Gli utenti possono eliminare un elemento creato scegliendolo dalla lista e confermando l'eliminazione.
+
 ### Gestione dell'Aggiunta di Elementi
 Gli utenti possono continuare ad aggiungere nuovi elementi fino a un massimo di cinque. Se raggiungono questo limite, viene offerta la possibilità di smettere di aggiungere nuovi elementi.
 
@@ -47,6 +55,7 @@ Quando si seleziona l'opzione di uscita, il programma richiede una conferma ("y"
 - **OOP**: Utilizzo della Programmazione Orientata agli Oggetti.
 
 ## Istruzioni per l'Installazione
-1. Repository:
+1. Clona il repository:
    ```bash
    git clone https://github.com/FedericoIafolla/Esercitazione-Prima-Settimana.git
+
