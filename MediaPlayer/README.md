@@ -15,6 +15,7 @@ Il progetto **Lettore Multimediale** è un'applicazione Java progettata per gest
 - **Benvenuto Personalizzato**: All'avvio, viene mostrato un messaggio di benvenuto.
 - **Gestione dell'Aggiunta di Elementi**: Gli utenti possono continuare ad aggiungere elementi fino a un massimo di cinque, con la possibilità di decidere di smettere di aggiungere quando raggiungono questo limite.
 - **Modifiche Multiple**: Gli utenti possono modificare il titolo, la luminosità e il volume degli elementi multimediali in modo interattivo.
+- **Elenco degli Elementi**: Gli utenti possono visualizzare un elenco di tutti gli elementi creati, suddivisi per tipo, con i dettagli di ciascun elemento.
 - **Conferma Uscita**: Durante l'uscita, il programma richiede conferma all'utente.
 
 ## Funzionalità
@@ -23,7 +24,9 @@ Il progetto **Lettore Multimediale** è un'applicazione Java progettata per gest
 L'interfaccia principale offre le seguenti opzioni:
 1. **Riproduci Elemento**: Visualizza un elenco degli elementi multimediali e consente di riprodurne uno.
 2. **Modifica Elemento**: Permette di modificare titolo, volume o luminosità degli elementi multimediali.
-3. **Esci**: Uscita dall'applicazione con conferma.
+3. **Aggiungi Elemento Extra**: Dopo aver creato cinque elementi, è possibile aggiungerne altri.
+4. **Lista Elementi**: Mostra un elenco di tutti gli elementi creati, suddivisi per tipo, con i dettagli di ciascun elemento.
+5. **Esci**: Uscita dall'applicazione con conferma.
 
 ### Sezione di Riproduzione
 Dopo aver selezionato "Riproduci Elemento", l'utente può scegliere un elemento dall'elenco e riprodurlo. L'applicazione visualizza l'elemento attualmente in riproduzione con dettagli come il titolo e i valori attuali di volume e luminosità.

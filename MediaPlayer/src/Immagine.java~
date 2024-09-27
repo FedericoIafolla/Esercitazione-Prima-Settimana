@@ -3,7 +3,7 @@ public class Immagine extends ElementoMultimediale {
 
     public Immagine(String titolo, int luminosità) {
         super(titolo);
-        this.luminosità = Math.max(0, Math.min(100, luminosità)); // Ensure luminosità is within bounds
+        this.luminosità = Math.max(0, Math.min(100, luminosità)); // Ensure luminosità stays between 0 and 100
     }
 
     public int getLuminosità() {

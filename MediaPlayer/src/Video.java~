@@ -15,7 +15,7 @@ public class Video extends ElementoMultimediale {
     }
 
     public void setVolume(int volume) {
-        this.volume = Math.max(0, Math.min(100, volume));
+        this.volume = Math.max(0, Math.min(100, volume)); // Ensure volume stays between 0 and 100
         System.out.println("Volume attuale: " + this.volume);
     }
 
@@ -24,12 +24,8 @@ public class Video extends ElementoMultimediale {
     }
 
     public void setLuminosità(int luminosità) {
-        this.luminosità = Math.max(0, Math.min(100, luminosità));
+        this.luminosità = Math.max(0, Math.min(100, luminosità)); // Ensure luminosità stays between 0 and 100
         System.out.println("Luminosità attuale: " + this.luminosità);
-    }
-
-    public int getDurata() {
-        return durata; // Added getDurata method
     }
 
     @Override
