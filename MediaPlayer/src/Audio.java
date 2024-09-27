@@ -18,7 +18,7 @@ public class Audio extends ElementoMultimediale {
     }
 
     public int getDurata() {
-        return durata; // Added getDurata method
+        return durata;
     }
 
     @Override

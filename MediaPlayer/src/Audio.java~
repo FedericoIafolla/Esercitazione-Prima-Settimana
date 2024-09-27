@@ -13,8 +13,12 @@ public class Audio extends ElementoMultimediale {
     }
 
     public void setVolume(int volume) {
-        this.volume = Math.max(0, Math.min(100, volume)); // Ensure volume stays between 0 and 100
+        this.volume = Math.max(0, Math.min(100, volume));
         System.out.println("Volume attuale: " + this.volume);
+    }
+
+    public int getDurata() {
+        return durata; 
     }
 
     @Override
