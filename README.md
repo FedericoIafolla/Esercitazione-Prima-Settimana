@@ -58,4 +58,4 @@ Quando l'utente sceglie di uscire, il programma richiede una conferma. Se l'inpu
 
 1. Clona il repository:
    ```bash
-   git clone https://github.com/tuo-username/lettore-multimediale.git
+   git clone https://github.com/FedericoIafolla/Esercitazione-Prima-Settimana.git
