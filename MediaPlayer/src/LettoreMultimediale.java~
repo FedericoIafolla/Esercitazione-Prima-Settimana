@@ -40,7 +40,7 @@ public class LettoreMultimediale {
                 elementi[conteggioElementi] = new Video(titolo, durata, volume, luminosità);
             }
             conteggioElementi++;
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume newline
         }
         esegui();
     }
