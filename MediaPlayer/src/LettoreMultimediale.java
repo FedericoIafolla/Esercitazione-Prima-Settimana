@@ -104,6 +104,8 @@ public class LettoreMultimediale {
                 }
             } else if (scelta == 4) {
                 mostraListaElementi();
+            } else if (scelta == 5) {
+                eliminaElemento();
             } else if (scelta == 0) {
                 boolean confermaUscita = false;
                 while (!confermaUscita) {
@@ -131,6 +133,7 @@ public class LettoreMultimediale {
         System.out.println("2. Modifica elemento");
         System.out.println("3. Aggiungi un elemento extra");
         System.out.println("4. Lista elementi");
+        System.out.println("5. Elimina elemento");
         System.out.println("0. Esci");
     }
 
@@ -192,50 +195,60 @@ public class LettoreMultimediale {
                 System.out.println("0. Torna indietro");
             }
 
-            int scelta = scanner.nextInt();
+            int sceltaModifica = scanner.nextInt();
             scanner.nextLine();
 
-            switch (scelta) {
-                case 1:
-                    System.out.print("Nuovo titolo: ");
-                    String nuovoTitolo = scanner.nextLine();
-                    elemento.setTitolo(nuovoTitolo);
-                    System.out.println("Titolo aggiornato!");
-                    break;
-                case 2:
-                    if (elemento instanceof Audio) {
-                        System.out.print("Nuovo volume (0-100): ");
-                        int nuovoVolume = scanner.nextInt();
-                        ((Audio) elemento).setVolume(nuovoVolume);
-                        System.out.println("Volume aggiornato!");
-                    } else if (elemento instanceof Immagine) {
-                        System.out.print("Nuova luminosità (0-100): ");
-                        int nuovaLuminosità = scanner.nextInt();
-                        ((Immagine) elemento).setLuminosità(nuovaLuminosità);
-                        System.out.println("Luminosità aggiornata!");
-                    } else if (elemento instanceof Video) {
-                        System.out.print("Nuovo volume (0-100): ");
-                        int nuovoVolumeVideo = scanner.nextInt();
-                        ((Video) elemento).setVolume(nuovoVolumeVideo);
-                        System.out.println("Volume aggiornato!");
-                    }
-                    break;
-                case 3:
-                    if (elemento instanceof Video) {
-                        System.out.print("Nuova luminosità (0-100): ");
-                        int nuovaLuminositàVideo = scanner.nextInt();
-                        ((Video) elemento).setLuminosità(nuovaLuminositàVideo);
-                        System.out.println("Luminosità aggiornata!");
-                    } else {
-                        System.out.println("Opzione non disponibile per questo tipo di elemento.");
-                    }
-                    break;
-                case 0:
-                    modificheAttive = false;
-                    break;
-                default:
-                    System.out.println("Scelta non valida. Riprova.");
+            if (sceltaModifica == 0) {
+                modificheAttive = false;
+            } else if (sceltaModifica == 1) {
+                System.out.print("Nuovo titolo: ");
+                String nuovoTitolo = scanner.nextLine();
+                elemento.setTitolo(nuovoTitolo);
+                System.out.println("Titolo aggiornato a: " + elemento.getTitolo());
+            } else if (sceltaModifica == 2 && elemento instanceof Immagine) {
+                System.out.print("Nuova luminosità (0-100): ");
+                int nuovaLuminosità = scanner.nextInt();
+                ((Immagine) elemento).setLuminosità(nuovaLuminosità);
+                System.out.println("Luminosità aggiornata a: " + ((Immagine) elemento).getLuminosità());
+            } else if (sceltaModifica == 2 && elemento instanceof Audio) {
+                System.out.print("Nuovo volume (0-100): ");
+                int nuovoVolume = scanner.nextInt();
+                ((Audio) elemento).setVolume(nuovoVolume);
+                System.out.println("Volume aggiornato a: " + ((Audio) elemento).getVolume());
+            } else if (sceltaModifica == 2 && elemento instanceof Video) {
+                System.out.print("Nuovo volume (0-100): ");
+                int nuovoVolume = scanner.nextInt();
+                ((Video) elemento).setVolume(nuovoVolume);
+                System.out.println("Volume aggiornato a: " + ((Video) elemento).getVolume());
+            } else if (sceltaModifica == 3 && elemento instanceof Video) {
+                System.out.print("Nuova luminosità (0-100): ");
+                int nuovaLuminosità = scanner.nextInt();
+                ((Video) elemento).setLuminosità(nuovaLuminosità);
+                System.out.println("Luminosità aggiornata a: " + ((Video) elemento).getLuminosità());
+            } else {
+                System.out.println("Scelta non valida.");
             }
+        }
+    }
+
+    public void eliminaElemento() {
+        mostraElementi();
+        System.out.print("Seleziona l'elemento da eliminare (1-" + conteggioElementi + ") o digita 0 per tornare al menu: ");
+        int indice = scanner.nextInt() - 1;
+
+        if (indice == -1) {
+            return;
+        }
+
+        if (indice >= 0 && indice < conteggioElementi && elementi[indice] != null) {
+            for (int i = indice; i < conteggioElementi - 1; i++) {
+                elementi[i] = elementi[i + 1];
+            }
+            elementi[conteggioElementi - 1] = null;
+            conteggioElementi--;
+            System.out.println("Elemento eliminato con successo.");
+        } else {
+            System.out.println("Elemento non valido.");
         }
     }
 }
